@@ -20,3 +20,6 @@ In my example im using dnsmasq as DHCP and DNS Server in my network. To configur
     dhcp-option=66,"192.168.0.234"
     dhcp-boot=pxelinux.0,192.168.0.234
 ```
+
+#### Remarks:
+Please note, Clonezilla is not included as a sample image, but the ('default')boot menu still lists it. To get it running just copy the required files into a 'images-pxeboot\clonezilla' folder, basically just check the configuration from the file. Everything is documented at the clonezilla page anyway.
