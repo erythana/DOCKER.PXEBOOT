@@ -1,0 +1,15 @@
+DEFAULT vesamenu.c32
+PROMPT 0
+TIMEOUT 300
+MENU TITLE PXE Network Boot Menu
+LABEL local
+MENU LABEL Boot from local drive
+MENU DEFAULT
+LOCALBOOT 0
+LABEL memtest
+MENU LABEL Memory-Test with memtest86+ v5.31
+KERNEL /images-pxeboot/memtest/memtest
+LABEL clonezilla
+MENU LABEL CloneZilla
+KERNEL /images-pxeboot/clonezilla/vmlinuz
+APPEND initrd=/images-pxeboot/clonezilla/initrd.img boot=live username=user union=overlay config components quiet noswap edd=on nomodeset nodmraid locales=en_US.UTF-8 keyboard-layouts=en ocs_live_run="ocs-live-general" ocs_live_extra_param="" ocs_live_batch=yes net.ifnames=0 nosplash noprompt fetch=tftp://192.168.0.234/images-pxeboot/clonezilla/filesystem.squashfs

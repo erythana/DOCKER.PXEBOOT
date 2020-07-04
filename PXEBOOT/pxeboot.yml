@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  pxeboot:
+    container_name: pxeboot
+    build: ./pxeboot/
+    ports:
+      - "69:69/udp"
+    volumes:
+      - './etc-pxeboot:/var/lib/tftpboot/etc-pxeboot'
+      - './images-pxeboot:/var/lib/tftpboot/images-pxeboot'
+    restart: unless-stopped
