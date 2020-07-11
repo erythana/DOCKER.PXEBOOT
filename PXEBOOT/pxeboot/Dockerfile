@@ -36,7 +36,11 @@ RUN \
   echo "*** creating sym-links to boot-config ***" && \
   ln -s ../pxelinux.cfg bios/pxelinux.cfg && \
   ln -s ../pxelinux.cfg efi32/pxelinux.cfg && \
-  ln -s ../pxelinux.cfg efi64/pxelinux.cfg
+  ln -s ../pxelinux.cfg efi64/pxelinux.cfg && \
+  ln -s ../images-pxeboot bios/images-pxeboot && \
+  ln -s ../images-pxeboot efi32/images-pxeboot && \
+  ln -s ../images-pxeboot efi64/images-pxeboot
+
 RUN \
   echo "*** copying a default-menu to the newly created folder ***"
 COPY starttftp.sh .
